@@ -18,18 +18,10 @@ namespace Algorithm
         {
             Init();
 
-            PriorityQueue<int, int> pq = new PriorityQueue<int, int>(true);
-
-            pq.Enqueue(12, 2);
-            pq.Enqueue(2, 3);
-            pq.Enqueue(3, 4);
-            pq.Enqueue(5, 1);
-            pq.Enqueue(-1, 2);
-            pq.Enqueue(-12, 3);
-
-            while (!pq.IsEmpty)
-                Util.Print(pq.Dequeue().Value);
-           
+            List<List<string>> strings = new List<List<string>>
+            {
+                new List<string>("1", "2", "3")
+            };
         }    
     }
 }

@@ -61,14 +61,14 @@ namespace Algorithm.Datastructure
 
         public Pair<TKey, TValue> Dequeue()
         {
-            if (IsEmpty) throw new PriorityQueueException("Priority queue is empty");
+            if (IsEmpty) throw new PriorityQueueException("Priority Queue is empty");
             return heap.Pop();
         }
 
         public Pair<TKey, TValue>[] Dequeue(int length)
         {
             if (Count > length)
-                throw new PriorityQueueException("Priority queue is empty");
+                throw new PriorityQueueException("Priority Queue is empty");
 
             Pair<TKey, TValue>[] items = new Pair<TKey, TValue>[length];
 

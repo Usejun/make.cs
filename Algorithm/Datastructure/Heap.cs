@@ -10,8 +10,8 @@ namespace Algorithm.Datastructure
         public bool IsEmpty => Count == 0;
         public T Top => items[0];
 
-        private bool reverse = false;
-        private List<T> items;
+        private readonly bool reverse = false;
+        private readonly List<T> items;
 
         public Heap()
         {

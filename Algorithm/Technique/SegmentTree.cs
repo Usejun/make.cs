@@ -5,9 +5,9 @@ namespace Algorithm.Technique
     public class SegmentTree<T>
             where T : IComparable<T>
     {
-        T[] array;
-        T[] tree;
-        int length;
+        private T[] array;
+        private T[] tree;
+        private  int length;
 
         public int Length => length;
 

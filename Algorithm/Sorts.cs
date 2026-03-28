@@ -73,21 +73,21 @@ namespace Algorithm.Sort
 
             comparer = comparer ?? Comparer<T>.Create((k, q) => order(k).CompareTo(order(q)));
 
-            int i, j;
-
-            // 배열을 돌면서 키 값을 결정한다.
-            for (i = 0; i < array.Length - 1; i++)
+            for (int i = 1; i < array.Length; i++)
             {
-                j = i;
-                // 키 값은 인덱스가 0보다 작고, 키 값의 오른쪽 값과 비교해
-                // 만약에 오른쪽 값보다 클 경우 두 값의 위치를 바꾼다.
-                while (j >= 0 && comparer.Compare(array[j], array[j + 1]) >= 0)
-                {
-                    (array[j], array[j + 1]) = (array[j + 1], array[j]);
+                // 키 값을 선택한다.
+                T key = array[i];
+                int j = i - 1;
 
-                    // 바꾼 후에는 한 칸 뒤로 이동해서 다시 비교한다.
+                // 키 값보다 큰 값을 뒤로 한 칸씩 민다.
+                while (j >= 0 && comparer.Compare(array[j], key) > 0)
+                {
+                    array[j + 1] = array[j];
                     j--;
                 }
+
+                // 키 값보다 작은 값이 등장한 위치에서 키 값을 다시 넣어준다.
+                array[j + 1] = key;
             }
         }
 

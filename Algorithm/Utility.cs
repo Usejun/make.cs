@@ -63,7 +63,7 @@ namespace Algorithm
         public static void Flush()
         {
             Print(sb.ToString(), end:"");
-            Buffer.Clear();
+            sb.Clear();
         }
 
         public static void Clear()
